@@ -60,8 +60,9 @@
   <link rel="stylesheet" href="./assets/aqua-spirit/spirit-soft-v20.css">
   <link rel="stylesheet" href="./assets/work-marquee/work-marquee.css">
   <link rel="stylesheet" href="./assets/contact-copy/contact-copy.css">
+<link rel="stylesheet" href="./assets/mobile/mobile.css?v=20261117">
 </head>
-<body>
+<body data-mobile-page="home">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="arrow-diagonal" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol></defs></svg>
   <div class="background-scene" aria-hidden="true"><div class="violet-atmosphere" id="hero-violet-atmosphere" data-running="false"><canvas class="violet-flow-surface" id="hero-violet-flow"></canvas><div class="violet-flow-fallback"></div></div><div class="scene-light" id="scene-light"></div></div>
   <canvas class="particle-canvas" id="ambient-particles" aria-hidden="true"></canvas>
@@ -491,6 +492,7 @@
       const surface=document.getElementById('hero-violet-flow');
       const hero=document.querySelector('.hero');
       if(!layer||!surface||!hero)return;
+      if(matchMedia('(max-width:760px) and (pointer:coarse)').matches)return;
       const vertex=`attribute vec2 a_position;void main(){gl_Position=vec4(a_position,0.0,1.0);}`;
       const fragment=`
         precision highp float;
@@ -614,5 +616,6 @@
   <script src="./assets/aqua-spirit/spirit-soft-v20.js" defer></script>
   <script src="./assets/work-marquee/work-marquee.js" defer></script>
   <script src="./assets/contact-copy/contact-copy.js" defer></script>
+<script src="./assets/mobile/mobile.js?v=20261117" defer></script>
 </body>
 </html>

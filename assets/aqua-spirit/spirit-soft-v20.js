@@ -1,5 +1,7 @@
 (()=>{
   'use strict';
+  // Mobile touch does not need the desktop pet or its animation loop.
+  if(matchMedia('(max-width:760px) and (pointer:coarse)').matches)return;
   const host=document.getElementById('aqua-spirit');if(!host)return;
   const canvas=host.querySelector('.spirit-live-canvas'),close=host.querySelector('.spirit-close');
   let ctx=null;try{ctx=canvas.getContext('2d',{alpha:true});}catch(_){return;}if(!ctx)return;
