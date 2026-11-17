@@ -1,0 +1,39 @@
+/* Mobile uses the existing live data and chart nodes, without desktop scaling. */
+@media(max-width:1024px){
+ html,body{width:100%!important;height:auto!important;min-height:100vh;overflow-x:hidden!important;overflow-y:visible!important}
+ #dashboard-scale-wrapper{position:relative!important;left:0!important;top:0!important;width:100%!important;min-width:0!important;max-width:100%;height:auto!important;min-height:0;transform:none!important;overflow:visible!important;padding:16px 12px;gap:16px}
+ #dashboard-scale-wrapper>header{height:auto;display:flex;flex-direction:column;gap:14px;padding:8px 0}
+ #dashboard-scale-wrapper>header>div:nth-child(2){order:-1;padding:0;width:100%}
+ #dashboard-scale-wrapper>header>div:first-child{display:none}
+ #dashboard-scale-wrapper>header>div:nth-child(3){align-items:center;width:100%;gap:10px}
+ #dashboard-scale-wrapper h1{font-size:22px;letter-spacing:.02em;white-space:normal;text-align:center;line-height:1.5}
+ #dashboard-scale-wrapper h1>span{letter-spacing:.02em}
+ #dashboard-scale-wrapper>header p{font-size:8px;letter-spacing:.08em;text-align:center}
+ #dashboard-scale-wrapper>main{display:flex;flex-direction:column;gap:16px;overflow:visible;min-height:0;flex:none}
+ #dashboard-scale-wrapper>main>div{width:100%;height:auto;min-height:0;display:flex;flex-direction:column;gap:16px}
+ #dashboard-scale-wrapper>main>div:nth-child(2){order:-1}
+ #dashboard-scale-wrapper .glass-panel{flex:none;min-width:0;padding:16px;backdrop-filter:none;-webkit-backdrop-filter:none}
+ #dashboard-scale-wrapper>main>div:nth-child(2)>div:first-child{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ #dashboard-scale-wrapper>main>div:nth-child(2)>div:first-child>div:first-child{grid-column:1 / -1}
+ #dashboard-scale-wrapper .text-5xl{font-size:32px;line-height:1.3}
+ #sparkline-gmv,#sparkline-orders,#sparkline-shipping{display:none}
+ #dashboard-scale-wrapper h2{font-size:16px;flex-wrap:wrap;gap:8px}
+ #fulfillment-list{flex:none;max-height:340px;overflow-y:auto}
+ #inventory-risk-list{flex:none;max-height:340px;overflow-y:auto}
+ #channel-pie-chart{flex:none;height:300px!important}
+ #sales-trend-chart{flex:none;height:270px!important}
+ #nb-map-container{flex:none;height:380px!important;min-height:380px}
+ #nb-map-container>div.absolute.bottom-4.right-4{display:none}
+ #nb-map-container>div.absolute.top-4.left-4{display:none}
+ #nb-map-chart{height:100%!important}
+ #dashboard-scale-wrapper>main>div:last-child>div:last-child>div:first-child{flex-wrap:wrap;gap:12px}
+ #dashboard-scale-wrapper>main>div:last-child>div:last-child>div:last-child{flex:none;height:570px}
+ #service-funnel-view{flex-direction:column;height:570px;padding-top:0}
+ #service-funnel-chart{width:100%!important;height:260px!important;flex:none}
+ #service-funnel-view>div:last-child{width:100%;height:auto;overflow:visible;gap:10px}
+ #service-funnel-view>div:last-child>div:last-child{display:none}
+ #service-reason-chart{width:100%!important;height:570px!important}
+ #dashboard-scale-wrapper button{min-height:44px;font-size:12px}
+ #dashboard-scale-wrapper footer{height:44px;min-height:44px;padding:0 12px}
+ .glow-orb{display:none}
+}

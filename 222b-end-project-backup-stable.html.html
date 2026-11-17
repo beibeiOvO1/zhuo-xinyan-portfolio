@@ -9532,7 +9532,7 @@
         }
     </style>
     <link rel="stylesheet" href="assets/oms-demo/demo-section.css" />
-<link rel="stylesheet" href="./assets/mobile/mobile.css?v=20261117">
+<link rel="stylesheet" href="./assets/mobile/mobile.css?v=20261118">
 </head>
 <body data-mobile-page="oms">
     <div class="page-shell">
@@ -12150,7 +12150,10 @@
                     const activeTargetId = navTargetMap[entry.target.id] || entry.target.id;
                     const isActive = link.getAttribute("href") === `#${activeTargetId}`;
                     link.classList.toggle("active", isActive);
-                    if (isActive) link.scrollIntoView({ behavior: "smooth", inline: "nearest", block: "nearest" });
+                    if (isActive && navScroller) {
+                        const offset = link.getBoundingClientRect().left - navScroller.getBoundingClientRect().left;
+                        navScroller.scrollTo({ left: navScroller.scrollLeft + offset - (navScroller.clientWidth - link.offsetWidth) / 2, behavior: "smooth" });
+                    }
                 });
             });
         }, {
@@ -12161,6 +12164,6 @@
         sections.forEach((section) => activeObserver.observe(section));
     </script>
     <script src="assets/oms-demo/demo-section.js" defer></script>
-<script src="./assets/mobile/mobile.js?v=20261117" defer></script>
+<script src="./assets/mobile/mobile.js?v=20261118" defer></script>
 </body>
 </html>

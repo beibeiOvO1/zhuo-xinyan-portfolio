@@ -17,7 +17,7 @@
   });
   if(!mobile.matches) return;
   const dataCaption=document.querySelector('.live-demo-caption');
-  if(dataCaption) dataCaption.textContent='动态大屏可左右滑动查看，横屏浏览可显示更多内容。';
+  if(dataCaption) dataCaption.textContent='手机版按纵向显示全部指标，可直接向下浏览动态图表。';
   const omsNote=document.querySelector('.oms-demo-bottom span:last-child');
   if(omsNote) omsNote.textContent='演示界面可左右滑动，横屏体验更完整。';
   const viewer=document.createElement('dialog');
