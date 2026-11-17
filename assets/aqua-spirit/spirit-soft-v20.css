@@ -1,0 +1,7 @@
+.aqua-spirit{position:fixed;right:clamp(9px,1.5vw,24px);bottom:8px;width:124px;height:168px;z-index:80;pointer-events:none;opacity:.94;visibility:visible;transition:opacity 300ms cubic-bezier(.22,1,.36,1),visibility 300ms}
+.aqua-spirit[data-visible="false"],.aqua-spirit[data-closed="true"],.js:not(.is-ready) .aqua-spirit{opacity:0;visibility:hidden}
+.spirit-live-canvas{display:block;width:100%;height:100%;pointer-events:none}
+.spirit-close{position:absolute;top:9px;right:1px;width:25px;height:25px;display:grid;place-items:center;padding:0;border:1px solid #b9dfe52a;border-radius:50%;background:#152735ad;color:#bddbdc;font:16px/1 sans-serif;opacity:.42;pointer-events:auto;cursor:pointer;transition:opacity 180ms cubic-bezier(.22,1,.36,1),background-color 180ms cubic-bezier(.22,1,.36,1)}.spirit-close:hover,.spirit-close:focus-visible{opacity:1;background:#263e4c}.spirit-close:active{transform:scale(.95)}.spirit-close:focus-visible{outline:2px solid #a4d8d3;outline-offset:4px}
+.hero-bottom{padding-right:104px}
+@media(max-width:700px){.aqua-spirit{width:96px;height:130px;right:5px;bottom:6px}.spirit-close{width:28px;height:28px;top:2px;opacity:.6}.hero-bottom{padding-right:80px}}
+@media(prefers-reduced-motion:reduce){.aqua-spirit,.spirit-close{transition:none}}

@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#121417">
+  <meta name="description" content="卓欣妍 UI/UX 与产品体验设计作品集：从用户需求、信息架构与交互设计，到高保真视觉与产品落地。">
+  <title>卓欣妍 — UI/UX & Product Experience</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='24' fill='%23121417'/%3E%3Cpath d='M14 14h20L14 34h20M24 10v28' fill='none' stroke='%23AEA8FE' stroke-width='2'/%3E%3C/svg%3E">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    @font-face{font-family:Instrument;src:url('./assets/portfolio-fonts/instrument.woff2') format('woff2');font-weight:400 600;font-display:swap}
+    @font-face{font-family:Newsreader;src:url('./assets/portfolio-fonts/newsreader.woff2') format('woff2');font-weight:300 600;font-display:swap}
+    :root{--bg:#121417;--fg:#fdfdfd;--soft:#d7d7db;--muted:#97999f;--line:#ffffff24;--accent:#aea8fe;--cream:#ebe1b0;--serif:Newsreader,'Noto Serif SC','Source Han Serif SC',SimSun,serif;--sans:Instrument,'Noto Sans SC','Microsoft YaHei',sans-serif;--out:cubic-bezier(.22,1,.36,1);--inout:cubic-bezier(.7,0,.3,1);--gutter:clamp(22px,4.2vw,72px);--max:1432px}
+    *{box-sizing:border-box}html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;min-width:320px;background:var(--bg);color:var(--fg);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}body.loading{overflow:hidden}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}button:disabled{opacity:.4;cursor:default}button,a{touch-action:manipulation}img{display:block;max-width:100%}h1,h2,h3,p,figure,dl,dd{margin:0}button{border:0}::selection{background:#aea8fe;color:#121417}:focus-visible{outline:2px solid var(--accent);outline-offset:6px}button:active,.pill:active{transform:scale(.95)}[hidden]{display:none!important}
+    .wrap{width:calc(100% - var(--gutter)*2);max-width:var(--max);margin-inline:auto}.eyebrow{font-size:10px;font-weight:400;letter-spacing:.17em;text-transform:uppercase;color:var(--muted)}.gradient-text{background:linear-gradient(105deg,var(--cream) -30%,#c5b9e0 40%,var(--accent) 100%);background-clip:text;-webkit-background-clip:text;color:transparent}.arrow{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;flex:none}.line-link{position:relative;display:inline-flex;align-items:center;gap:12px;padding-bottom:7px}.line-link:after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:currentColor;transform:scaleX(.22);transform-origin:left;transition:transform 300ms var(--out)}.line-link:hover:after,.line-link:focus-visible:after{transform:scaleX(1)}
+    .background-scene{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;background:radial-gradient(ellipse at 78% 16%,#30364042,transparent 57%),radial-gradient(ellipse at 14% 78%,#29303a42,transparent 60%),linear-gradient(135deg,#181c22,#111418)}.scene-light{position:absolute;width:105vw;height:110vh;left:15%;top:-12%;background:radial-gradient(ellipse at center,#a397ce0b,transparent 59%);transition:transform 900ms var(--out)}.background-scene:after{content:'';position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.83' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}.particle-canvas{position:fixed;inset:0;pointer-events:none;width:100%;height:100%;z-index:0;opacity:.94;mix-blend-mode:screen}.site-shell{position:relative;z-index:1}
+    .header{position:fixed;inset:0 0 auto;z-index:100;padding:25px var(--gutter);transition:background 250ms var(--out),padding 250ms var(--out);border-bottom:1px solid transparent}.header.scrolled{background:#121417de;backdrop-filter:blur(16px);border-color:#ffffff12;padding-block:18px}.header-inner{max-width:var(--max);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}.identity{display:flex;align-items:baseline;gap:34px;font-size:14px}.identity strong{font-weight:500;letter-spacing:.03em}.identity small{font-size:12px;color:var(--muted)}.nav{display:flex;align-items:center;gap:30px}.nav a{font-size:12px;color:#c5c6cb;position:relative}.nav a:after{content:'';position:absolute;bottom:-6px;left:0;right:0;height:1px;background:#fdfdfd;transform:scaleX(0);transform-origin:left;transition:transform 200ms var(--out)}.nav a:hover:after,.nav a[aria-current]:after{transform:scaleX(1)}.nav a[aria-current]{color:#fff}.icon-button{display:grid;place-items:center;width:34px;height:34px;border:1px solid #ffffff50;border-radius:50%;background:transparent;transition:background 180ms var(--out),transform 180ms var(--out);color:#e7e7e9}.icon-button:hover{background:#ffffff15;transform:translateY(-2px)}.icon-button svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5}.reading-progress{position:absolute;bottom:-1px;left:0;width:100%;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left}
+    .hero{padding:clamp(140px,13vh,190px) 0 52px;min-height:95svh;display:flex;align-items:center}.hero-inner{width:100%}.hero-topline{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:36px}.availability{display:flex;align-items:center;gap:9px;font-size:11px;color:#bcbac7}.availability i{width:5px;height:5px;background:#b8b4d5;border-radius:50%}.hero-title{font:300 clamp(50px,6.6vw,100px)/1.2 var(--serif);letter-spacing:-.055em;max-width:1100px}.hero-title .mask{display:block;overflow:hidden;padding-bottom:.07em}.hero-title .mask>span{display:block;transform:translateY(0);transition:transform 1150ms var(--out);transition-delay:80ms}.hero-title .mask:nth-child(2)>span{transition-delay:200ms}.hero-title em{font-style:normal}.hero-subline{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,520px);gap:50px;align-items:start;margin-top:34px}.hero-name{display:flex;align-items:center;gap:16px}.name-divider{width:36px;height:1px;background:#ffffff55}.hero-name strong{font-weight:400;font-size:18px;letter-spacing:.08em}.hero-name small{color:var(--muted);font-size:11px;letter-spacing:.07em}.hero-description{font-size:14px;line-height:1.95;color:#c2c1c7;max-width:520px}.hero-actions{display:flex;align-items:center;gap:28px;margin-top:27px}.hero-actions .line-link{font-size:13px;color:var(--accent)}.hero-actions .plain-link{font-size:12px;color:var(--muted);transition:color 180ms var(--out)}.hero-actions .plain-link:hover{color:#fff}.hero-metadata{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:60px}.hero-metadata>div{padding:22px 0}.hero-metadata>div+div{padding-left:28px;border-left:1px solid var(--line)}.hero-metadata dt{font-size:9px;color:#92949c;letter-spacing:.14em;text-transform:uppercase}.hero-metadata dd{margin-top:10px;color:#dfdfe3;font-size:12px}.hero-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:24px;font-size:9px;letter-spacing:.12em;color:#757981}.scroll-prompt{display:inline-flex;align-items:center;gap:13px}.scroll-prompt svg{width:13px;height:13px}.hero-in{transition:opacity 700ms var(--out),transform 700ms var(--out);transition-delay:370ms}.js:not(.is-ready) .hero-title .mask>span{transform:translateY(115%)}.js:not(.is-ready) .hero-in{opacity:0;transform:translateY(18px)}
+    .section{padding-block:clamp(80px,10vw,145px)}.section-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);gap:50px;align-items:end;margin-bottom:44px}.section-heading h2{font:300 clamp(42px,5.8vw,82px)/1.05 var(--serif);letter-spacing:-.045em;margin-top:16px}.section-heading p{font-size:13px;line-height:1.95;color:#a9abb2;max-width:420px}.section-heading .eyebrow{display:block}.section-index{display:flex;gap:12px;align-items:center}.section-index:before{content:'';width:28px;height:1px;background:var(--accent)}
+    .profile-figure{margin:0}.profile-zoom{position:relative;display:block;width:100%;padding:0;background:#f9f7f1;overflow:hidden;text-align:left}.profile-zoom img{width:100%;height:auto;transition:transform 850ms var(--out);transform:scale(1.001)}.profile-zoom:hover img{transform:scale(1.014)}.image-open-label{position:absolute;right:20px;bottom:20px;display:flex;align-items:center;gap:10px;border:1px solid #13233c28;background:#ffffffe8;color:#1a2a45;padding:9px 12px;font-size:10px;backdrop-filter:blur(8px)}.image-open-label svg{width:14px;height:14px}.image-caption{display:flex;justify-content:space-between;gap:24px;padding-top:16px;font-size:9px;letter-spacing:.1em;color:#80848d}.profile-note{display:grid;grid-template-columns:1fr 2fr;gap:50px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}.profile-note p{font:300 clamp(19px,2.3vw,31px)/1.65 var(--serif);color:#d9d7df;max-width:830px;letter-spacing:-.02em}
+    .work-section{padding-top:60px}.work-heading h2{display:flex;align-items:baseline;gap:20px}.work-heading sup{font:400 12px var(--sans);letter-spacing:0;color:var(--accent)}.work-list{display:flex;flex-direction:column;gap:clamp(70px,10vw,150px)}.work-card{width:83.333%;align-self:flex-start}.work-card:nth-child(even){align-self:flex-end}.work-link{display:block}.work-media{position:relative;overflow:hidden;aspect-ratio:1672/941;background:#171a1e;border-radius:3px}.work-card:nth-child(2) .work-media,.work-card:nth-child(4) .work-media{background:#171a1e}.shot-motion{position:absolute;inset:0;transform:scale(1.025);transition:transform 800ms var(--out)}.shot-crop{position:absolute;inset:0;overflow:hidden}.shot-source{width:100%;max-width:100%;height:100%;object-fit:contain;transform:none;user-select:none}.work-card:hover .shot-motion{transform:scale(1.035)}.work-image-shade{position:absolute;inset:0;background:#000;opacity:0;transition:opacity 300ms var(--out);pointer-events:none}.work-link:hover .work-image-shade{opacity:.06}.media-corner{position:absolute;top:18px;right:18px;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#ffffffde;color:#1c1b23;transform:rotate(0deg);transition:transform 300ms var(--out)}.media-corner svg{width:17px;height:17px}.work-link:hover .media-corner{transform:translate(1px,-1px)}.work-caption{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.8fr);gap:40px;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}.work-number{font:300 15px var(--serif);color:var(--accent);margin-bottom:10px}.work-caption h3{font:400 clamp(22px,2.7vw,35px)/1.3 var(--serif);letter-spacing:-.025em}.work-type{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#999ca6;margin-top:9px}.work-summary{font-size:12px;color:#b0b1b9;line-height:1.95;padding-top:3px}.work-tags{display:flex;gap:13px;flex-wrap:wrap;margin-top:14px;color:#777c88;font-size:10px}.work-tags span+span:before{content:'/';margin-right:13px;color:#595e69}.work-entry{display:inline-flex;align-items:center;gap:14px;margin-top:17px;font-size:11px;color:var(--accent)}.work-entry .arrow{width:16px;height:16px;transition:transform 200ms var(--out)}.work-link:hover .work-entry .arrow{transform:translate(3px,-3px)}
+    .closing{padding-top:clamp(80px,12vw,170px);padding-bottom:28px}.closing-topline{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;margin-bottom:56px}.closing-title{font:300 clamp(47px,6.5vw,94px)/1.22 var(--serif);letter-spacing:-.055em}.closing-title em{font-style:normal}.closing-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:42px}.closing-copy{max-width:490px;font-size:13px;color:#aeb0b9;line-height:1.95}.signoff{font:300 22px var(--serif);color:#d7d6de;margin-top:24px}.contact-list{display:grid;gap:0}.contact-row{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);background:transparent;text-align:left;transition:color 200ms var(--out),padding-left 200ms var(--out)}.contact-row:first-child{padding-top:0}.contact-row:hover{color:var(--accent);padding-left:5px}.contact-row>span{display:flex;flex-direction:column;gap:7px}.contact-row small{font-size:9px;color:#777e8a;letter-spacing:.14em}.contact-row strong{font-size:clamp(13px,1.5vw,19px);font-weight:400}.contact-row .arrow{width:18px;height:18px}.copy-status{font-size:10px;color:var(--accent)}.footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;margin-top:80px;padding-top:24px;border-top:1px solid var(--line);font-size:9px;letter-spacing:.1em;color:#727883}.footer-links{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:26px}.footer button{background:none;padding:0;font:inherit;letter-spacing:inherit;color:#acafb8;transition:color 180ms var(--out)}.footer a:hover,.footer button:hover{color:#fff}
+    .loader{position:fixed;inset:0;z-index:9000;overflow:hidden;isolation:isolate}.loader-panels{position:absolute;inset:0;display:flex}.loader-panel{flex:1;height:100%;background:#fff;transform:translateY(0);transition:transform 750ms var(--inout)}.loader-panel:nth-child(1){transition-delay:240ms}.loader-panel:nth-child(2){transition-delay:160ms}.loader-panel:nth-child(3){transition-delay:80ms}.loader.exit .loader-panel{transform:translateY(101%)}.loader-topline{position:absolute;top:38px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;color:#52525c;font-size:9px;letter-spacing:.14em;transition:opacity 200ms var(--out)}.loader-center{position:absolute;inset:0;display:flex;flex-direction:column;gap:17px;align-items:center;justify-content:center;pointer-events:none;transition:opacity 250ms var(--out),transform 400ms var(--out)}.loader-preview{position:relative;width:clamp(280px,32vw,462px);aspect-ratio:1672/941;background:#171a1e;overflow:hidden}.loader-frame{position:absolute;inset:0;opacity:0;transition:opacity 320ms var(--out)}.loader-frame.active{opacity:1}.loader-frame img{width:100%;max-width:100%;height:100%;object-fit:contain;transform:none}.loader-project-name{color:#676772;font-size:9px;letter-spacing:.12em;text-transform:uppercase}.loader-progress{position:absolute;right:var(--gutter);bottom:36px;font:300 clamp(32px,4vw,54px)/1 var(--serif);letter-spacing:-.04em;color:#121417;font-variant-numeric:tabular-nums;transition:opacity 200ms var(--out)}.loader-progress small{font-size:.55em;margin-left:2px}.loader-skip{position:absolute;left:var(--gutter);bottom:38px;background:none;padding:3px 0;color:#888894;font-size:9px;letter-spacing:.08em;transition:opacity 200ms var(--out)}.loader.exit .loader-center,.loader.exit .loader-topline,.loader.exit .loader-progress,.loader.exit .loader-skip{opacity:0}.loader.exit .loader-center{transform:translateY(12px)}.loader[hidden]{display:none}
+    .cursor{position:fixed;left:0;top:0;width:96px;height:96px;z-index:9999;pointer-events:none;opacity:0;mix-blend-mode:difference;transition:opacity 150ms var(--out)}.cursor.visible{opacity:1}.cursor-body{width:96px;height:96px;transform:scale(.291667);transition:transform 240ms cubic-bezier(.2,.8,.2,1),opacity 150ms var(--out);opacity:.5}.cursor-circle{fill:transparent;stroke:#fff;stroke-width:1.5;transition:fill 180ms var(--out)}.cursor-arrow{fill:none;stroke:#000;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity 180ms var(--out)}.cursor[data-state='pointer'] .cursor-body{transform:scale(.145833);opacity:1}.cursor[data-state='link'] .cursor-body{transform:scale(1);opacity:1}.cursor[data-state='link'] .cursor-circle,.cursor[data-state='pointer'] .cursor-circle{fill:#fff}.cursor[data-state='link'] .cursor-arrow{opacity:1}.cursor.pressed .cursor-body{scale:.92}@media(any-hover:hover) and (any-pointer:fine){html.custom-cursor,html.custom-cursor *{cursor:none!important}}
+    .image-dialog{position:fixed;inset:0;z-index:7000;background:#080a0deF;backdrop-filter:blur(14px);padding:70px 36px 34px;overflow:auto;opacity:0;transition:opacity 200ms var(--out)}.image-dialog.open{opacity:1}.image-dialog img{width:auto;max-width:100%;max-height:calc(100svh - 115px);object-fit:contain;margin:auto}.dialog-close{position:fixed;top:20px;right:var(--gutter);z-index:2;border:1px solid #ffffff55;background:#20232a;border-radius:50%;width:38px;height:38px;display:grid;place-items:center}.dialog-close svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:1.5}.dialog-caption{position:fixed;left:var(--gutter);top:31px;color:#9a9da8;font-size:10px;letter-spacing:.08em}.toast{position:fixed;left:50%;bottom:30px;z-index:8000;padding:11px 18px;background:#f4f1ff;color:#17151e;box-shadow:0 8px 40px #0004;font-size:12px;opacity:0;transform:translate(-50%,12px);pointer-events:none;transition:opacity 180ms var(--out),transform 180ms var(--out)}.toast.show{opacity:1;transform:translate(-50%,0)}
+    .js .reveal{opacity:0;transform:translateY(24px);transition:opacity 800ms var(--out),transform 800ms var(--out)}.js .reveal.in-view{opacity:1;transform:none}
+    html.intro-optin .loader{display:block!important}html.intro-optin .loader-panel{transition-duration:750ms!important}
+    @media(min-width:1700px){.hero{min-height:90svh}.hero-title{font-size:108px}}
+    @media(max-width:1000px){.identity small{display:none}.hero-title{font-size:clamp(52px,7.6vw,82px)}.hero-subline{grid-template-columns:1fr 1fr;gap:35px}.hero-metadata>div+div{padding-left:18px}.hero-metadata dd{font-size:11px}.work-card{width:90%}.closing-grid{gap:45px}}
+    @media(max-width:700px){:root{--gutter:22px}.header{padding-block:20px}.identity{gap:0;font-size:12px}.nav{gap:18px}.nav a{font-size:10px}.header .icon-button{display:none}.hero{min-height:auto;padding-top:135px;padding-bottom:36px}.hero-topline{margin-bottom:30px}.hero-topline .eyebrow{font-size:8px}.availability{font-size:9px}.hero-title{font-size:clamp(36px,7.2vw,54px);line-height:1.3;letter-spacing:-.065em}.hero-subline{grid-template-columns:1fr;gap:25px;margin-top:28px}.hero-name strong{font-size:15px}.hero-name small{font-size:9px}.hero-description{font-size:12px}.hero-actions{margin-top:21px}.hero-metadata{grid-template-columns:1fr 1fr;margin-top:38px}.hero-metadata>div{padding:17px 0}.hero-metadata>div+div{padding-left:18px}.hero-metadata>div:nth-child(3){padding-left:0;border-left:0;border-top:1px solid var(--line)}.hero-metadata>div:nth-child(4){border-top:1px solid var(--line)}.hero-bottom{font-size:8px}.section{padding-block:75px}.section-heading{grid-template-columns:1fr;gap:23px;margin-bottom:30px}.section-heading h2{font-size:48px}.section-heading p{font-size:12px;max-width:430px}.profile-note{grid-template-columns:1fr;gap:13px;margin-top:27px}.profile-note p{font-size:22px}.image-open-label{right:10px;bottom:10px;padding:5px 8px;font-size:8px}.image-caption{font-size:8px;gap:12px}.image-caption span:last-child{display:none}.work-section{padding-top:20px}.work-card{width:100%}.work-list{gap:65px}.work-media{aspect-ratio:1672/941}.work-caption{grid-template-columns:1fr;gap:12px;margin-top:18px;padding-top:15px}.work-caption h3{font-size:26px}.work-type{font-size:8px}.work-number{font-size:13px;margin-bottom:7px}.work-summary{font-size:12px}.media-corner{top:10px;right:10px;width:30px;height:30px}.closing{padding-top:65px}.closing-topline{margin-bottom:36px}.closing-topline .eyebrow{font-size:8px}.closing-title{font-size:clamp(38px,8vw,58px);letter-spacing:-.07em}.closing-grid{grid-template-columns:1fr;gap:35px;margin-top:28px}.closing-copy{font-size:12px}.footer{gap:15px;align-items:flex-start;margin-top:48px;font-size:8px}.footer-links{gap:15px}.footer-links .footer-location{display:none}.loader-topline{top:28px;font-size:8px}.loader-preview{width:74vw;max-width:462px}.loader-project-name{font-size:8px}.loader-progress{bottom:30px}.loader-skip{bottom:30px}.image-dialog{padding:82px 12px 32px}.image-dialog img{max-height:none;width:100%}.cursor{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.loader{display:none}.scene-light{display:none}.particle-canvas{display:block}.js:not(.is-ready) .hero-title .mask>span,.js:not(.is-ready) .hero-in,.js .reveal{opacity:1;transform:none}.cursor{display:none}html.custom-cursor,html.custom-cursor *{cursor:auto!important}}
+
+    .hero-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,340px);gap:clamp(32px,4vw,72px);align-items:end}
+    .hero-english{padding:4px 0 8px 27px;border-left:1px solid #ffffff1e;margin-bottom:13px}
+    .hero-english-kicker{font-size:9px;letter-spacing:.19em;color:#8e929c;margin-bottom:20px}
+    .hero-english-statement{font:300 clamp(27px,2.5vw,40px)/1.2 var(--serif);letter-spacing:-.035em;color:#d8d9df}
+    .hero-english-statement em{font-weight:300;color:#aaa5c3}
+    .hero-english-process{font-size:9px;letter-spacing:.13em;color:#747b86;margin-top:22px}
+    .pointer-trail{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;mix-blend-mode:screen;opacity:.9}
+    @media(max-width:700px){.hero-heading{grid-template-columns:1fr;gap:26px}.hero-english{padding:0 0 0 16px;margin:0}.hero-english-kicker{font-size:8px;margin-bottom:10px}.hero-english-statement{font-size:28px;line-height:1.12}.hero-english-process{display:none}}
+    @media(prefers-reduced-motion:reduce){.pointer-trail{display:none}}
+
+    /* Broad violet wisps stay behind the hero, its text and the pointer lens. */
+    .violet-atmosphere{--flow-strength:.9;position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:calc(var(--flow-visibility,1)*var(--flow-strength));mix-blend-mode:screen;transition:opacity 300ms cubic-bezier(.22,1,.36,1);-webkit-mask-image:linear-gradient(#000 0%,#000 70%,transparent 100%);mask-image:linear-gradient(#000 0%,#000 70%,transparent 100%)}
+    .violet-flow-surface{position:absolute;inset:0;width:100%;height:100%;display:none}
+    .violet-atmosphere[data-renderer="webgl"] .violet-flow-surface{display:block}
+    .violet-atmosphere[data-renderer="webgl"] .violet-flow-fallback{display:none}
+    .violet-flow-fallback{position:absolute;inset:-20%;filter:blur(46px);opacity:.65}
+    .violet-flow-fallback:before,.violet-flow-fallback:after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 58% 19% at 74% 38%,#73508f70,transparent 72%),radial-gradient(ellipse 32% 55% at 92% 24%,#8166a13d,transparent 74%);animation:violet-drift-a 32s cubic-bezier(.45,0,.55,1) infinite alternate}
+    .violet-flow-fallback:after{background:radial-gradient(ellipse 60% 14% at 51% 58%,#9c7cc23b,transparent 75%),radial-gradient(ellipse 38% 42% at 34% 42%,#553c762b,transparent 78%);animation-name:violet-drift-b;animation-duration:43s;animation-delay:-13s}
+    .violet-atmosphere[data-running="false"] .violet-flow-fallback:before,.violet-atmosphere[data-running="false"] .violet-flow-fallback:after{animation-play-state:paused}
+    @keyframes violet-drift-a{from{transform:translate3d(-3%,3%,0) rotate(-11deg) scale(1.04)}to{transform:translate3d(4%,-5%,0) rotate(9deg) scale(1.12)}}
+    @keyframes violet-drift-b{from{transform:translate3d(4%,-2%,0) rotate(12deg) scale(1.12)}to{transform:translate3d(-5%,5%,0) rotate(-8deg) scale(1.04)}}
+    @media(max-width:700px){.violet-atmosphere{--flow-strength:.7}.violet-flow-fallback{filter:blur(32px)}}
+    @media(prefers-reduced-motion:reduce){.violet-flow-fallback:before,.violet-flow-fallback:after{animation:none!important}.violet-atmosphere{transition:none}}
+  </style>
+  <noscript><style>.loader{display:none!important}.hero-title .mask>span,.hero-in,.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <link rel="stylesheet" href="./assets/mini-program-miaodaiban/case.css">
+  <link rel="stylesheet" href="./assets/aqua-spirit/spirit-soft-v20.css">
+  <link rel="stylesheet" href="./assets/work-marquee/work-marquee.css">
+  <link rel="stylesheet" href="./assets/contact-copy/contact-copy.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="arrow-diagonal" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol></defs></svg>
+  <div class="background-scene" aria-hidden="true"><div class="violet-atmosphere" id="hero-violet-atmosphere" data-running="false"><canvas class="violet-flow-surface" id="hero-violet-flow"></canvas><div class="violet-flow-fallback"></div></div><div class="scene-light" id="scene-light"></div></div>
+  <canvas class="particle-canvas" id="ambient-particles" aria-hidden="true"></canvas>
+  <canvas class="pointer-trail" id="pointer-trail" aria-hidden="true"></canvas>
+  <div class="loader" id="loader" aria-label="作品集开场">
+    <div class="loader-panels"><div class="loader-panel"></div><div class="loader-panel"></div><div class="loader-panel"></div><div class="loader-panel"></div></div>
+    <div class="loader-topline"><span>ZHUO XINYAN — DESIGN PORTFOLIO</span><span>2026</span></div>
+    <div class="loader-center">
+      <div class="loader-preview">
+        <div class="loader-frame active"><img src="./assets/project-covers-editorial-v5/01-oms-approved.png" alt="" width="1672" height="941" fetchpriority="high"></div>
+        <div class="loader-frame"><img src="./assets/project-covers-editorial-v5/02-petling-cover.png" alt="" width="1672" height="941"></div>
+        <div class="loader-frame"><img src="./assets/project-covers-editorial-v5/03-dashboard-cover.png" alt="" width="1672" height="941"></div>
+        <div class="loader-frame"><img src="./assets/project-covers-editorial-v5/04-visual-motion-cover-v6.png" alt="" width="1672" height="941"></div>
+      </div>
+      <span class="loader-project-name" id="loader-project-name">01 / 聚好麦 OMS</span>
+    </div>
+    <span class="loader-progress"><span id="loader-percent">0</span><small>%</small></span>
+    <button type="button" class="loader-skip" id="loader-skip" data-cursor="pointer" aria-label="跳过开场动画">跳过开场 ↗</button>
+  </div>
+  <div class="cursor" id="cursor" data-state="default" aria-hidden="true"><div class="cursor-body"><svg viewBox="0 0 96 96" width="96" height="96"><circle class="cursor-circle" cx="48" cy="48" r="46.5" vector-effect="non-scaling-stroke"/><path class="cursor-arrow" d="M33 63 63 33M35 33h28v28"/></svg></div></div>
+  <div class="site-shell">
+    <header class="header" id="header">
+      <div class="header-inner">
+        <a href="#top" class="identity" data-cursor="pointer"><strong>卓欣妍 · ZHUO XINYAN</strong><small>UI/UX & Product Experience</small></a>
+        <nav class="nav" aria-label="主导航"><a href="#about" data-cursor="pointer">关于我</a><a href="#work" data-cursor="pointer">精选作品</a><a href="#contact" data-cursor="pointer">联系我</a><button class="icon-button" type="button" data-replay data-cursor="pointer" aria-label="重播开屏动画" title="重播开屏"><svg viewBox="0 0 24 24"><path d="M20 8a8 8 0 1 0 0 9M20 3v5h-5"/></svg></button></nav>
+      </div><div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+    </header>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap hero-inner">
+          <div class="hero-topline hero-in"><p class="eyebrow">PERSONAL PORTFOLIO · SELECTED DESIGN WORK</p><span class="availability"><i aria-hidden="true"></i> UI/UX · 产品体验设计 求职中</span></div>
+          <div class="hero-heading">
+            <h1 class="hero-title" id="hero-title"><span class="mask"><span>用设计连接用户</span></span><span class="mask"><span>与<em class="gradient-text">美好体验。</em></span></span></h1>
+            <div class="hero-english hero-in" lang="en"><p class="hero-english-kicker">DESIGN WITH PURPOSE</p><p class="hero-english-statement">Clear by design.<br><em>Human at heart.</em></p><p class="hero-english-process">RESEARCH / DESIGN / BUILD</p></div>
+          </div>
+          <div class="hero-subline hero-in">
+            <div class="hero-name"><span class="name-divider" aria-hidden="true"></span><strong>卓欣妍</strong><small>ZHUO XINYAN</small></div>
+            <div><p class="hero-description">数字媒体艺术背景，关注复杂信息如何被理解、关键流程如何更顺畅，以及视觉语言如何服务产品目标。<br>从用户需求到产品落地，设计清晰、有温度的体验。</p><div class="hero-actions"><a href="#work" class="line-link" data-cursor="link">浏览精选作品<svg class="arrow" aria-hidden="true"><use href="#arrow-diagonal"/></svg></a><a href="#contact" class="plain-link" data-cursor="pointer">与我交流</a></div></div>
+          </div>
+          <dl class="hero-metadata hero-in"><div><dt>Focus / 求职方向</dt><dd>UI/UX · 产品体验设计</dd></div><div><dt>Background / 专业背景</dt><dd>本科 · 数字媒体艺术</dd></div><div><dt>Practice / 项目领域</dt><dd>B 端 · C 端 · 数据可视化</dd></div><div><dt>Process / 工作方法</dt><dd>需求分析 → 交互 → 视觉 → 落地</dd></div></dl>
+          <div class="hero-bottom hero-in"><span>DESIGNED WITH INTENTION, BUILT WITH CARE.</span><a class="scroll-prompt" href="#about" data-cursor="pointer">继续向下<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M5 13l7 7 7-7"/></svg></a></div>
+        </div>
+      </section>
+      <section class="work-marquee" data-work-marquee data-running="false" aria-labelledby="work-marquee-title">
+        <div class="wrap work-marquee__heading">
+          <div><p class="eyebrow">A GLIMPSE OF MY WORK</p><h2 id="work-marquee-title">作品掠影</h2></div>
+          <button class="work-marquee__toggle" type="button" data-marquee-toggle data-cursor="pointer" aria-pressed="false" aria-controls="work-reel-left work-reel-right" hidden>暂停图片滚动</button>
+        </div>
+        <div class="work-marquee__rows">
+          <div class="work-marquee__row work-marquee__row--left" id="work-reel-left">
+            <div class="work-marquee__track">
+              <ul class="work-marquee__group" aria-label="第一排：产品界面与活动设计">
+                <li><a class="work-marquee__card" href="./222b-end-project-backup-stable.html.html" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--complete"><img src="./assets/project-covers-editorial-v5/01-oms-approved.png" width="1672" height="941" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>聚好麦 OMS</strong><small>B 端 SaaS · 多平台订单管理</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+                <li><a class="work-marquee__card" href="./111petlink.html" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--complete"><img src="./assets/project-covers-editorial-v5/02-petling-cover.png" width="1672" height="941" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>宠灵 PetLink</strong><small>C 端 App · 宠物健康体验</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+                <li><a class="work-marquee__card" href="./333data-dashboard.html" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--complete"><img src="./assets/project-covers-editorial-v5/03-dashboard-cover.png" width="1672" height="941" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>全渠道经营监测中心</strong><small>数据可视化 · 经营决策</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+                <li><a class="work-marquee__card" href="./444visual-design.html#mini-program" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--mini"><img src="./assets/mini-program-miaodaiban/dual-page-light.png" width="1086" height="1448" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>截图秒待办</strong><small>自研微信小程序 · 正式版已发布</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+                <li><a class="work-marquee__card" href="./444visual-design.html#h5-design" data-cursor="pointer">
+                  <span class="work-marquee__image"><img src="./图片/新春开运节/banner-atmosphere.png" width="1672" height="941" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>新春开运节</strong><small>H5 活动 · 节日运营设计</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+                <li><a class="work-marquee__card" href="./111petlink.html#h5-activity-design" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--complete"><img src="./图片/h5-multi-device-showcase.png" width="2880" height="1620" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>春日打卡活动</strong><small>宠灵 H5 · 多设备活动展示</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="work-marquee__row work-marquee__row--right" id="work-reel-right">
+            <div class="work-marquee__track">
+              <ul class="work-marquee__group" aria-label="第二排：IP、运营视觉与影像">
+                <li><a class="work-marquee__card" href="./111petlink.html#ip-introduction" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--complete"><img src="./图片/ip封面页.png" width="1672" height="941" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>灵灵 IP 形象</strong><small>品牌 IP · 角色主视觉</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+                <li><a class="work-marquee__card" href="./111petlink.html#spring-campaign-title" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--poster"><img src="./图片/节日运营1.png" width="1536" height="2750" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>春日萌宠节</strong><small>节日运营 · 春季活动视觉</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+                <li><a class="work-marquee__card" href="./111petlink.html#anniversary-campaign-title" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--poster"><img src="./图片/节日运营图.png" width="572" height="1024" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>宠灵两周年</strong><small>周年运营 · 品牌活动视觉</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+                <li><a class="work-marquee__card" href="./444visual-design.html#ecommerce-design" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--commerce"><img src="./assets/ecommerce-lumivera/01-key-visual.png" width="941" height="1672" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>LUMIVERA 焕亮精华</strong><small>电商视觉 · 护肤品详情页</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+                <li><a class="work-marquee__card" href="./444visual-design.html#pavo-film-title" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--complete"><img src="./assets/ai-pavo-film/poster.jpg" width="1344" height="768" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>PAVO 键盘产品短片</strong><small>AI 视频 · 产品展示 · 00:27</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+                <li><a class="work-marquee__card" href="./444visual-design.html#felt-animation" data-cursor="pointer">
+                  <span class="work-marquee__image work-marquee__image--complete"><img src="./assets/ai-felt-film/cover.png" width="1672" height="941" alt="" loading="lazy" decoding="async"></span>
+                  <span class="work-marquee__caption"><strong>毛毡动画短片</strong><small>AI 动画 · 角色与场景 · 05:57</small><span aria-hidden="true">↗</span></span>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section profile-section" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+          <div class="section-heading reveal"><div><span class="eyebrow section-index">01 / ABOUT ME</span><h2 id="about-title">A little about me.</h2></div><p>从用户需求到产品落地的体验设计者。<br>重视信息架构、流程连贯性与视觉一致性，也持续用 AI 辅助调研、视觉探索与开发协同。</p></div>
+          <figure class="profile-figure reveal"><button type="button" class="profile-zoom" id="profile-zoom" data-cursor="link" aria-label="放大查看个人介绍"><img src="./assets/unboxing-profile.png" width="3072" height="2048" alt="卓欣妍的个人介绍、AI 工作流闭环、核心能力、设计工具与联系方式" loading="lazy" decoding="async"><span class="image-open-label">查看完整介绍<svg class="arrow" aria-hidden="true"><use href="#arrow-diagonal"/></svg></span></button><figcaption class="image-caption"><span>PROFILE · AI WORKFLOW · DESIGN CAPABILITIES</span><span>从需求出发，以落地为终点</span></figcaption></figure>
+          <div class="profile-note reveal"><span class="eyebrow">MY APPROACH</span><p>不仅关注界面是否美观，更关注用户是否理解、流程是否顺畅、产品是否真正落地。</p></div>
+        </div>
+      </section>
+      <section class="section work-section" id="work" aria-labelledby="work-title">
+        <div class="wrap">
+          <div class="section-heading work-heading reveal"><div><span class="eyebrow section-index">02 / SELECTED WORK</span><h2 id="work-title">Selected projects.<sup>(04)</sup></h2></div><p>四类项目，四种设计视角。<br>从复杂业务的信息组织，到移动端的情感体验；点击项目，了解设计过程与具体判断。</p></div>
+          <div class="work-list">
+            <article class="work-card reveal"><a class="work-link" data-cursor="link" href="./222b-end-project-backup-stable.html.html" aria-label="查看聚好麦 OMS 项目">
+              <div class="work-media"><div class="shot-motion"><div class="shot-crop"><img class="shot-source" src="./assets/project-covers-editorial-v5/01-oms-approved.png" width="1672" height="941" alt="聚好麦多平台订单管理系统设计" loading="lazy" decoding="async"></div></div><span class="work-image-shade"></span><span class="media-corner" aria-hidden="true"><svg class="arrow"><use href="#arrow-diagonal"/></svg></span></div>
+              <div class="work-caption"><div><div class="work-number">01 — Efficiency in complexity</div><h3>聚好麦 · OMS 电商后台设计</h3><p class="work-type">B2B SaaS / Order Management System</p></div><div><p class="work-summary">围绕多渠道订单、商品、库存与履约流程，梳理复杂信息与任务路径，提升业务界面的可读性和操作效率。</p><div class="work-tags"><span>信息架构</span><span>库存流转</span><span>后台规范</span></div><span class="work-entry">查看完整项目<svg class="arrow" aria-hidden="true"><use href="#arrow-diagonal"/></svg></span></div></div>
+            </a></article>
+            <article class="work-card reveal"><a class="work-link" data-cursor="link" href="./111petlink.html" aria-label="查看宠灵 App 项目">
+              <div class="work-media"><div class="shot-motion"><div class="shot-crop"><img class="shot-source" src="./assets/project-covers-editorial-v5/02-petling-cover.png" width="1672" height="941" alt="宠灵宠物健康 App 设计" loading="lazy" decoding="async"></div></div><span class="work-image-shade"></span><span class="media-corner" aria-hidden="true"><svg class="arrow"><use href="#arrow-diagonal"/></svg></span></div>
+              <div class="work-caption"><div><div class="work-number">02 — Care, made intuitive</div><h3>宠灵 · 宠物 App 设计</h3><p class="work-type">Mobile App / Pet Care Experience</p></div><div><p class="work-summary">围绕宠物健康、社区与服务场景，建立兼顾陪伴感和任务效率的移动端体验，让照护过程更清晰、更有温度。</p><div class="work-tags"><span>用户旅程</span><span>移动体验</span><span>情感化设计</span></div><span class="work-entry">查看完整项目<svg class="arrow" aria-hidden="true"><use href="#arrow-diagonal"/></svg></span></div></div>
+            </a></article>
+            <article class="work-card reveal"><a class="work-link" data-cursor="link" href="./333data-dashboard.html" aria-label="查看经营数据可视化项目">
+              <div class="work-media"><div class="shot-motion"><div class="shot-crop"><img class="shot-source" src="./assets/project-covers-editorial-v5/03-dashboard-cover.png" width="1672" height="941" alt="聚好麦全渠道经营监测中心设计" loading="lazy" decoding="async"></div></div><span class="work-image-shade"></span><span class="media-corner" aria-hidden="true"><svg class="arrow"><use href="#arrow-diagonal"/></svg></span></div>
+              <div class="work-caption"><div><div class="work-number">03 — Turning data into clarity</div><h3>电商数据可视化大屏</h3><p class="work-type">Data Visualization / Business Insights</p></div><div><p class="work-summary">梳理指标体系与展示层级，呈现经营状态和异常趋势，帮助业务在高密度信息中更快识别关键变化。</p><div class="work-tags"><span>指标体系</span><span>经营监测</span><span>异常识别</span></div><span class="work-entry">查看完整项目<svg class="arrow" aria-hidden="true"><use href="#arrow-diagonal"/></svg></span></div></div>
+            </a></article>
+            <article class="work-card reveal"><a class="work-link" data-cursor="link" href="./444visual-design.html" aria-label="查看 H5、自研小程序与 AI 视频项目">
+              <div class="work-media"><div class="shot-motion"><div class="shot-crop"><img class="shot-source" src="./assets/project-covers-editorial-v5/04-visual-motion-cover-v6.png" width="1672" height="941" alt="H5 活动、自研小程序与 AI 视频设计作品" loading="lazy" decoding="async"></div></div><span class="work-image-shade"></span><span class="media-corner" aria-hidden="true"><svg class="arrow"><use href="#arrow-diagonal"/></svg></span></div>
+              <div class="work-caption"><div><div class="work-number">04 — Expression in motion</div><h3>H5、自研小程序与 AI 视频</h3><p class="work-type">H5 / Mini Programs / AI Video</p></div><div><p class="work-summary">从 H5 活动、自研小程序到 AI 视频，串联交互体验、视觉表达与动态叙事，呈现从创意构想到设计实现的过程。</p><div class="work-tags"><span>H5 活动</span><span>自研小程序</span><span>AI 视频</span></div><span class="work-entry">查看完整项目<svg class="arrow" aria-hidden="true"><use href="#arrow-diagonal"/></svg></span></div></div>
+            </a></article>
+          </div>
+          <section class="mini-program mini-program--dark reveal" id="mini-program-experience" aria-label="可体验的自研小程序"><div class="mp-card">
+      <figure class="mp-visual"><img src="./assets/mini-program-miaodaiban/home-screen.png" width="620" height="1170" alt="截图秒待办的截图秒办界面，支持截图、拍照、语音和手动创建任务" loading="lazy" decoding="async"></figure>
+      <div class="mp-copy"><p class="mp-label">INDEPENDENT PRODUCT / WECHAT MINI PROGRAM</p>
+        <div class="mp-title-row"><h3 class="mp-title">截图秒待办</h3><span class="mp-live">正式版已发布</span></div>
+        <p class="mp-subtitle">把零散信息，变成可执行的待办。</p>
+        <p class="mp-description">面向聊天和通知中的零散待办，支持通过截图、拍照、语音或手动输入创建任务。AI 理解信息后，由用户确认，再整理为包含标题、时间、地点与备注的任务，让记录过程更清晰、更可控。</p>
+        <div class="mp-inputs"><span>截图识别</span><span>拍照识别</span><span>语音创建</span><span>手动添加</span></div>
+        <p class="mp-role"><strong>我的职责</strong>　独立完成产品构思、UI/UX 设计与开发<br>使用 AI 辅助实现与迭代，将想法落地为可使用的小程序。</p>
+        <div class="mp-access"><button class="mp-code-button" type="button" data-cursor="pointer" data-mini-qr="./assets/mini-program-miaodaiban/mini-program-code.png" aria-label="放大小程序码，微信扫码体验截图秒待办" aria-haspopup="dialog"><img src="./assets/mini-program-miaodaiban/mini-program-code.png" width="573" height="462" alt="截图秒待办正式版小程序码" loading="lazy" decoding="async"><span>微信扫一扫 · 点击放大</span></button><div class="mp-access-copy"><div class="mp-actions"><button class="mp-copy-button" type="button" data-cursor="pointer" data-mini-copy="#小程序://秒待办/8vNSutHhILPeIGd"><span data-mini-copy-label>复制小程序口令</span><span aria-hidden="true">↗</span></button><a class="mp-details-link" href="./444visual-design.html#mini-program" data-cursor="pointer">了解设计过程 ↗</a></div>
+        <p class="mp-access-note" data-mini-feedback role="status" aria-live="polite">微信小程序：截图秒待办 · 可复制口令在微信中使用</p></div></div>
+      </div></div></section>
+        </div>
+      </section>
+      <section class="closing" id="contact" aria-labelledby="contact-title"><div class="wrap">
+        <div class="closing-topline reveal"><span class="eyebrow">03 / THANK YOU FOR YOUR TIME</span><span class="eyebrow">LET’S CONNECT</span></div>
+        <h2 class="closing-title reveal" id="contact-title">感谢你的时间，<br><em class="gradient-text">期待与你进一步交流。</em></h2>
+        <div class="closing-grid reveal"><div><p class="closing-copy">感谢你看到这里。希望有机会向你介绍更多项目中的思考与细节，也期待加入团队，用清晰的设计帮助用户完成任务，让想法成为真正可用的产品体验。</p><p class="signoff">祝好，卓欣妍</p></div><div class="contact-list">
+          <button type="button" class="contact-row" data-cursor="pointer" data-copy="zhuoxinyan_123580@qq.com" aria-label="复制邮箱 zhuoxinyan_123580@qq.com"><span><small>EMAIL / 邮箱</small><strong>zhuoxinyan_123580@qq.com</strong></span><span class="copy-status" aria-live="polite">复制</span></button>
+          <button type="button" class="contact-row" data-cursor="pointer" data-copy="_19924496556"><span><small>WECHAT / 点击复制微信号</small><strong>_19924496556</strong></span><span class="copy-status" aria-live="polite">复制</span></button>
+          <button type="button" class="contact-row" data-cursor="pointer" data-copy="19924496556" aria-label="复制电话 19924496556"><span><small>PHONE / 电话</small><strong>19924496556</strong></span><span class="copy-status" aria-live="polite">复制</span></button>
+        </div></div>
+        <footer class="footer"><span>© 2026 ZHUO XINYAN</span><div class="footer-links"><span class="footer-location">UI/UX & PRODUCT EXPERIENCE</span><button type="button" id="background-motion" aria-pressed="true" data-cursor="pointer">背景动效：开</button><button type="button" data-replay data-cursor="pointer">重播开场 ↻</button><a href="#top" data-cursor="pointer">回到顶部 ↑</a></div></footer>
+      </div></section>
+    </main>
+  </div>
+  <div class="image-dialog" id="image-dialog" role="dialog" aria-modal="true" aria-label="完整个人介绍" hidden><span class="dialog-caption">PROFILE / 卓欣妍</span><button class="dialog-close" id="dialog-close" data-cursor="pointer" aria-label="关闭完整个人介绍"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></svg></button><img src="./assets/unboxing-profile.png" width="3072" height="2048" alt="卓欣妍完整个人介绍、AI 工作流和联系方式"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+  (()=>{
+    'use strict';
+    const root=document.documentElement,body=document.body;
+    const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+    const fine=matchMedia('(any-hover:hover) and (any-pointer:fine)');
+    const loader=document.getElementById('loader'),percent=document.getElementById('loader-percent');
+    const frames=[...document.querySelectorAll('.loader-frame')];
+    const names=['01 / 聚好麦 OMS','02 / 宠灵 APP','03 / 数据可视化','04 / 视觉与动效'];
+    let loaderRaf=0,loaderTimers=[],loaderRun=0;
+    const clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,n));
+    const ready=()=>{root.classList.add('is-ready');document.querySelectorAll('.reveal').forEach(el=>revealObserver?revealObserver.observe(el):el.classList.add('in-view'));};
+    let revealObserver='IntersectionObserver' in window?new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');revealObserver.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -35px 0px'}):null;
+    function finishLoader(run){if(run!==loaderRun)return;cancelAnimationFrame(loaderRaf);loaderTimers.forEach(clearTimeout);loaderTimers=[];document.querySelector('.site-shell').inert=false;loader.hidden=true;body.classList.remove('loading');root.classList.remove('intro-optin');ready();}
+    function exitLoader(run){if(run!==loaderRun||loader.classList.contains('exit'))return;cancelAnimationFrame(loaderRaf);loader.classList.add('exit');percent.textContent='100';loaderTimers.push(setTimeout(()=>{if(run===loaderRun)ready();},260),setTimeout(()=>finishLoader(run),1070));}
+    function playIntro(replay=false){
+      cancelAnimationFrame(loaderRaf);loaderTimers.forEach(clearTimeout);loaderTimers=[];
+      const run=++loaderRun;
+      if(reduced.matches&&!replay){finishLoader(run);return;}
+      if(replay)root.classList.add('intro-optin');
+      if(replay)window.scrollTo({top:0,behavior:'instant'});
+      document.querySelector('.site-shell').inert=true;root.classList.remove('is-ready');body.classList.add('loading');loader.hidden=false;loader.classList.remove('exit');percent.textContent='0';
+      frames.forEach((f,i)=>f.classList.toggle('active',i===0));document.getElementById('loader-project-name').textContent=names[0];
+      const start=performance.now();let frameIndex=0;
+      function tick(now){if(run!==loaderRun)return;const elapsed=now-start;const progress=clamp(elapsed/2400);percent.textContent=String(Math.round(progress*100));const index=Math.min(3,Math.floor(elapsed/550));if(index!==frameIndex){frameIndex=index;frames.forEach((f,i)=>f.classList.toggle('active',i===index));document.getElementById('loader-project-name').textContent=names[index];}if(progress<1)loaderRaf=requestAnimationFrame(tick);else loaderTimers.push(setTimeout(()=>exitLoader(run),220));}
+      loaderRaf=requestAnimationFrame(tick);
+      // A missing asset must never leave the visitor behind the loader.
+      loaderTimers.push(setTimeout(()=>finishLoader(run),6500));
+    }
+    document.querySelectorAll('[data-replay]').forEach(button=>button.addEventListener('click',()=>playIntro(true)));
+    document.getElementById('loader-skip').addEventListener('click',()=>exitLoader(loaderRun));
+    reduced.addEventListener?.('change',()=>{if(reduced.matches)finishLoader(loaderRun);});
+    playIntro();
+
+    const header=document.getElementById('header'),progressBar=document.getElementById('reading-progress'),parallaxMedia=[...document.querySelectorAll('.work-media')];
+    let scrollRaf=0;function onScroll(){if(scrollRaf)return;scrollRaf=requestAnimationFrame(()=>{const y=window.scrollY,max=Math.max(1,root.scrollHeight-innerHeight);header.classList.toggle('scrolled',y>30);progressBar.style.transform=`scaleX(${clamp(y/max)})`;if(!reduced.matches){const shifts=parallaxMedia.map(media=>{const rect=media.getBoundingClientRect();return clamp((innerHeight/2-rect.top-rect.height/2)/innerHeight,-1,1)*10;});parallaxMedia.forEach((media,i)=>media.querySelector('.shot-motion').style.translate=`0 ${shifts[i]}px`);}scrollRaf=0;});}
+    addEventListener('scroll',onScroll,{passive:true});onScroll();
+    if('IntersectionObserver' in window){const navObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)document.querySelectorAll('.nav a').forEach(a=>{if(a.getAttribute('href')==='#'+e.target.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});});},{rootMargin:'-20% 0px -58% 0px'});document.querySelectorAll('#about,#work,#contact').forEach(s=>navObserver.observe(s));}
+
+    const cursor=document.getElementById('cursor');let mx=-100,my=-100,cx=-100,cy=-100,vx=0,vy=0,cursorRaf=0,lastCursorTime=0;
+    function cursorTick(time){const dt=Math.min((time-lastCursorTime)/1000||1/60,1/30);lastCursorTime=time;const dx=mx-cx,dy=my-cy;const steps=Math.ceil(dt/.006),step=dt/steps;for(let i=0;i<steps;i++){vx+=((mx-cx)*700-vx*50)*step/.5;vy+=((my-cy)*700-vy*50)*step/.5;cx+=vx*step;cy+=vy*step;}cursor.style.transform=`translate3d(${cx-48}px,${cy-48}px,0)`;if(Math.abs(dx)+Math.abs(dy)+Math.abs(vx)+Math.abs(vy)>.15)cursorRaf=requestAnimationFrame(cursorTick);else cursorRaf=0;}
+    function cursorMode(event){const target=event.target.closest?.('[data-cursor]');cursor.dataset.state=target?.dataset.cursor||'default';}
+    if(fine.matches&&!reduced.matches){root.classList.add('custom-cursor');addEventListener('pointermove',event=>{if(event.pointerType==='touch')return;mx=event.clientX;my=event.clientY;if(!cursor.classList.contains('visible')){cx=mx;cy=my;vx=vy=0;}cursor.classList.add('visible');if(!cursorRaf){lastCursorTime=performance.now();cursorRaf=requestAnimationFrame(cursorTick);}},{passive:true});document.addEventListener('pointerover',cursorMode);addEventListener('pointerdown',()=>cursor.classList.add('pressed'));addEventListener('pointerup',()=>cursor.classList.remove('pressed'));document.addEventListener('mouseleave',()=>cursor.classList.remove('visible'));addEventListener('blur',()=>cursor.classList.remove('visible','pressed'));}
+
+    // Firefly field: independent returning flight paths, soft glow and slow twinkling.
+    // The existing difference-blend cursor remains the image's X-ray lens.
+    const canvas=document.getElementById('ambient-particles');let ctx=null;
+    // Rasterize the small ambient sprites on the CPU to avoid accelerated
+    // path artifacts during scrolling, zooming and compositor changes.
+    try{ctx=canvas.getContext('2d',{alpha:true,willReadFrequently:true});}catch(_){/* Keep the static graphite and grain. */}
+    const motionControl=document.getElementById('background-motion');
+    let backgroundEnabled=!reduced.matches;
+    function paintMotionLabel(){motionControl.setAttribute('aria-pressed',String(backgroundEnabled));motionControl.textContent=backgroundEnabled?'背景动效：开':'背景动效：关';}
+    paintMotionLabel();
+    if(ctx){
+      let w=0,h=0,points=[],particleRaf=0,lastFrame=0,elapsed=0,resizeTimer=0;
+      let fieldX=0,fieldY=0,targetX=0,targetY=0,pointerX=-9999,pointerY=-9999;
+      const light=document.getElementById('scene-light');
+      // Cache glow sprites; every firefly has its own phase and flight speed.
+      const fireflyPalette=['240,230,172','196,176,250','154,231,205'];
+      const sprites=fireflyPalette.map(color=>{
+        const tile=document.createElement('canvas');tile.width=tile.height=64;
+        const brush=tile.getContext('2d');if(!brush)return null;
+        const glow=brush.createRadialGradient(32,32,0,32,32,32);
+        glow.addColorStop(0,`rgba(${color},1)`);
+        glow.addColorStop(.09,`rgba(${color},.88)`);
+        glow.addColorStop(.26,`rgba(${color},.32)`);
+        glow.addColorStop(.6,`rgba(${color},.075)`);
+        glow.addColorStop(1,`rgba(${color},0)`);
+        brush.fillStyle=glow;brush.fillRect(0,0,64,64);return tile;
+      });
+      const cores=fireflyPalette.map(color=>{
+        const tile=document.createElement('canvas');tile.width=tile.height=32;
+        const brush=tile.getContext('2d');if(!brush)return null;
+        const core=brush.createRadialGradient(16,16,0,16,16,16);
+        core.addColorStop(0,`rgba(${color},1)`);
+        core.addColorStop(.72,`rgba(${color},1)`);
+        core.addColorStop(1,`rgba(${color},0)`);
+        brush.fillStyle=core;brush.fillRect(0,0,32,32);return tile;
+      });
+      function clearParticleFrame(){
+        // clearRect does not reset the current path or drawing state. Clear
+        // the entire backing store independently of its CSS scale and DPR.
+        ctx.setTransform(1,0,0,1,0,0);
+        ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.filter='none';
+        ctx.clearRect(0,0,canvas.width,canvas.height);ctx.beginPath();
+        ctx.setTransform(canvas.width/w,0,0,canvas.height/h,0,0);
+      }
+      function render(delta){
+        const interactive=backgroundEnabled&&!reduced.matches;
+        if(delta){
+          elapsed+=delta;
+          const blend=1-Math.exp(-delta*3.5);
+          fieldX+=((interactive?targetX:0)-fieldX)*blend;fieldY+=((interactive?targetY:0)-fieldY)*blend;
+        }else if(!interactive){fieldX=fieldY=0;}
+        clearParticleFrame();
+        for(const p of points){
+          const t=elapsed*p.speed;
+          // Nested arcs make each point fly back and forth, rather than scroll
+          // in one direction or teleport across the viewport boundary.
+          const localX=Math.sin(t+p.phase)*p.rangeX+Math.sin(t*.57+p.phase2)*p.rangeX*.28;
+          const localY=Math.cos(t*.83+p.phase2)*p.rangeY+Math.sin(t*1.31+p.phase)*p.rangeY*.24;
+          const x=p.x+localX+fieldX*p.depth,y=p.y+localY+fieldY*p.depth;
+          const pulse=.3+.7*Math.pow((Math.sin(elapsed*p.twinkle+p.phase2)+1)*.5,1.5);
+          const dx=x-pointerX,dy=y-pointerY;
+          const proximity=interactive?Math.max(0,1-(dx*dx+dy*dy)/(180*180)):0;
+          const alpha=Math.min(.88,p.alpha*pulse+proximity*.08*p.depth);
+          if(p.glow&&sprites[p.tint]){
+            const size=12+p.depth*23;
+            ctx.globalAlpha=alpha*(p.foreground ? .94 : .78);
+            ctx.drawImage(sprites[p.tint],x-size/2,y-size/2,size,size);ctx.globalAlpha=1;
+          }
+          if(cores[p.tint]){
+            const size=p.radius*(.88+pulse*.12)*2;
+            ctx.globalAlpha=alpha;
+            ctx.drawImage(cores[p.tint],x-size/2,y-size/2,size,size);
+          }
+          ctx.globalAlpha=1;
+        }
+        if(light)light.style.transform=`translate3d(${fieldX*.6}px,${fieldY*.6}px,0)`;
+      }
+      function resize(){
+        w=Math.max(1,innerWidth);h=Math.max(1,innerHeight);const dpr=Math.min(devicePixelRatio||1,1.5);
+        canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+        const count=Math.round(clamp(w*h/34000,23,74));
+        const travelScale=Math.min(1,w/1000);
+        points=Array.from({length:count},(_,i)=>{
+          const foreground=i%9===0;
+          const depth=foreground ? .82+Math.random()*.18 : .2+Math.random()*.65;
+          return{
+            x:Math.random()*w,y:Math.random()*h,depth,foreground,
+            radius:foreground?1.8+Math.random()*.7:.45+depth*1.35,
+            alpha:foreground ? .7+Math.random()*.14 : .3+depth*.4,
+            rangeX:(25+depth*105)*travelScale,rangeY:24+depth*75,
+            speed:.18+depth*.25+Math.random()*.08,
+            phase:Math.random()*Math.PI*2,phase2:Math.random()*Math.PI*2,
+            twinkle:.65+Math.random()*.7,glow:i%4!==0||foreground,
+            tint:i%10<5?0:i%10<9?1:2
+          };
+        });
+        render(0);
+      }
+      function frame(time){
+        if(!backgroundEnabled||document.hidden){particleRaf=0;return;}
+        if(time-lastFrame>=33){const dt=lastFrame?Math.min((time-lastFrame)/1000,.08):0;lastFrame=time;render(dt);}
+        particleRaf=requestAnimationFrame(frame);
+      }
+      function syncBackground(){cancelAnimationFrame(particleRaf);particleRaf=0;lastFrame=0;paintMotionLabel();if(backgroundEnabled&&!document.hidden)particleRaf=requestAnimationFrame(frame);else render(0);}
+      function resetField(){pointerX=pointerY=-9999;targetX=targetY=0;}
+      if(fine.matches){
+        addEventListener('pointermove',event=>{
+          if(event.pointerType==='touch'||reduced.matches||!backgroundEnabled)return;
+          pointerX=event.clientX;pointerY=event.clientY;
+          targetX=(pointerX/Math.max(w,1)-.5)*20;targetY=(pointerY/Math.max(h,1)-.5)*14;
+        },{passive:true});
+        document.addEventListener('mouseleave',resetField);addEventListener('blur',resetField);
+      }
+      resize();syncBackground();
+      addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(resize,120);},{passive:true});
+      motionControl.addEventListener('click',()=>{backgroundEnabled=!backgroundEnabled;resetField();syncBackground();});
+      document.addEventListener('visibilitychange',()=>{resetField();syncBackground();});
+      reduced.addEventListener?.('change',()=>{backgroundEnabled=!reduced.matches;resetField();syncBackground();});
+      canvas.addEventListener('contextlost',()=>{cancelAnimationFrame(particleRaf);particleRaf=0;});
+      canvas.addEventListener('contextrestored',()=>{resize();resetField();syncBackground();});
+    }else{motionControl.hidden=true;}
+
+    // A separate background canvas keeps the cyan wisp out of the X-ray lens.
+    (()=>{
+      const trailCanvas=document.getElementById('pointer-trail');
+      if(!trailCanvas)return;
+      let brush=null;
+      try{brush=trailCanvas.getContext('2d',{alpha:true});}catch(_){return;}
+      if(!brush)return;
+      const lifetime=720,maxLength=230;
+      let width=0,height=0,raf=0,lastTime=0,lastMove=-9999,inside=false;
+      let tx=0,ty=0,hx=0,hy=0,samples=[];
+      function allowed(){return fine.matches&&!reduced.matches&&backgroundEnabled&&!document.hidden;}
+      function clearTrailFrame(){
+        brush.setTransform(1,0,0,1,0,0);
+        brush.globalAlpha=1;brush.globalCompositeOperation='source-over';brush.filter='none';
+        brush.clearRect(0,0,trailCanvas.width,trailCanvas.height);brush.beginPath();
+        brush.setTransform(trailCanvas.width/width,0,0,trailCanvas.height/height,0,0);
+      }
+      function clear(){
+        cancelAnimationFrame(raf);raf=0;lastTime=0;inside=false;samples=[];
+        clearTrailFrame();
+      }
+      function fit(){
+        width=Math.max(1,innerWidth);height=Math.max(1,innerHeight);
+        const dpr=Math.min(devicePixelRatio||1,1.25);
+        trailCanvas.width=Math.round(width*dpr);trailCanvas.height=Math.round(height*dpr);
+        brush.setTransform(dpr,0,0,dpr,0,0);clear();
+      }
+      function path(){
+        brush.beginPath();brush.moveTo(samples[0].x,samples[0].y);
+        for(let i=1;i<samples.length-1;i++){
+          const p=samples[i],next=samples[i+1];
+          brush.quadraticCurveTo(p.x,p.y,(p.x+next.x)/2,(p.y+next.y)/2);
+        }
+        const end=samples[samples.length-1];brush.lineTo(end.x,end.y);
+      }
+      function stroke(lineWidth,blur,alpha,fade){
+        const start=samples[0],end=samples[samples.length-1];
+        const color=brush.createLinearGradient(start.x,start.y,end.x+.01,end.y+.01);
+        color.addColorStop(0,'rgba(112,218,230,0)');
+        color.addColorStop(.45,`rgba(112,218,230,${alpha*.2*fade})`);
+        color.addColorStop(1,`rgba(139,255,232,${alpha*fade})`);
+        brush.save();brush.filter=`blur(${blur}px)`;brush.strokeStyle=color;
+        brush.lineWidth=lineWidth;brush.lineCap='round';brush.lineJoin='round';
+        path();brush.stroke();brush.restore();
+      }
+      function tick(now){
+        raf=0;
+        if(!allowed()){clear();return;}
+        const dt=Math.min(lastTime?(now-lastTime)/1000:1/60,.04);lastTime=now;
+        const blend=1-Math.exp(-dt*22);
+        hx+=(tx-hx)*blend;hy+=(ty-hy)*blend;
+        const previous=samples[samples.length-1];
+        if(inside&&(!previous||Math.hypot(hx-previous.x,hy-previous.y)>.65))samples.push({x:hx,y:hy,t:now});
+        samples=samples.filter(p=>now-p.t<lifetime);
+        while(samples.length>42)samples.shift();
+        let length=0;
+        for(let i=samples.length-1;i>0;i--){
+          length+=Math.hypot(samples[i].x-samples[i-1].x,samples[i].y-samples[i-1].y);
+          if(length>maxLength){samples.splice(0,i);break;}
+        }
+        clearTrailFrame();
+        const fade=Math.pow(Math.max(0,1-(now-lastMove)/lifetime),1.35);
+        if(fade>0&&samples.length){
+          brush.globalCompositeOperation='lighter';
+          if(samples.length>1){stroke(34,15,.14,fade);stroke(12,5,.29,fade);stroke(2.5,1.4,.72,fade);}
+          const glow=brush.createRadialGradient(hx,hy,0,hx,hy,47);
+          glow.addColorStop(0,`rgba(203,255,244,${.38*fade})`);
+          glow.addColorStop(.15,`rgba(117,255,224,${.27*fade})`);
+          glow.addColorStop(.45,`rgba(103,190,219,${.075*fade})`);
+          glow.addColorStop(1,'rgba(103,190,219,0)');
+          brush.fillStyle=glow;brush.fillRect(hx-47,hy-47,94,94);
+          brush.globalCompositeOperation='source-over';
+          raf=requestAnimationFrame(tick);
+        }else{samples=[];lastTime=0;}
+      }
+      addEventListener('pointermove',event=>{
+        if(event.pointerType==='touch'||!allowed())return;
+        const now=performance.now();
+        if(!inside||now-lastMove>lifetime){hx=event.clientX;hy=event.clientY;samples=[];}
+        tx=event.clientX;ty=event.clientY;inside=true;lastMove=now;
+        if(!raf){lastTime=0;raf=requestAnimationFrame(tick);}
+      },{passive:true});
+      addEventListener('resize',fit,{passive:true});
+      document.addEventListener('mouseleave',clear);addEventListener('blur',clear);
+      document.addEventListener('visibilitychange',clear);
+      reduced.addEventListener?.('change',clear);fine.addEventListener?.('change',clear);
+      motionControl.addEventListener('click',clear);
+      fit();
+    })();
+
+
+    // Original, procedural violet atmosphere. It is scoped to the first screen.
+    (()=>{
+      const layer=document.getElementById('hero-violet-atmosphere');
+      const surface=document.getElementById('hero-violet-flow');
+      const hero=document.querySelector('.hero');
+      if(!layer||!surface||!hero)return;
+      const vertex=`attribute vec2 a_position;void main(){gl_Position=vec4(a_position,0.0,1.0);}`;
+      const fragment=`
+        precision highp float;
+        uniform vec2 u_resolution;
+        uniform float u_time;
+        float hash(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
+        float noise(vec2 p){
+          vec2 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);
+          return mix(mix(hash(i),hash(i+vec2(1.0,0.0)),f.x),mix(hash(i+vec2(0.0,1.0)),hash(i+vec2(1.0,1.0)),f.x),f.y);
+        }
+        float fbm(vec2 p){
+          float result=0.0,weight=0.55;
+          mat2 turn=mat2(0.84,-0.54,0.54,0.84);
+          for(int i=0;i<4;i++){result+=weight*noise(p);p=turn*p*2.03+vec2(4.1,7.3);weight*=0.48;}
+          return result;
+        }
+        void main(){
+          vec2 uv=gl_FragCoord.xy/u_resolution;uv.y=1.0-uv.y;
+          float aspect=u_resolution.x/max(u_resolution.y,1.0);
+          vec2 p=vec2(uv.x*aspect,uv.y);
+          float t=u_time;
+          float cloud=fbm(p*1.85+vec2(t*0.026,-t*0.018));
+          float fold=fbm(p*3.0+vec2(cloud*1.3-t*0.016,t*0.011));
+          float arc=0.43+0.17*sin(uv.x*5.4+t*0.11)+0.065*sin(uv.x*9.1-t*0.085);
+          float distance=uv.y-arc+(cloud-0.5)*0.28;
+          float body=exp(-pow(distance/0.20,2.0));
+          float edge=exp(-pow((distance+0.045+(fold-0.5)*0.055)/0.065,2.0));
+          float side=exp(-pow((uv.x-0.88+0.08*sin(uv.y*4.2+t*0.07))/0.21,2.0));
+          side*=0.35+0.65*exp(-pow((uv.y-0.35)/0.52,2.0));
+          float exposure=0.24+0.76*smoothstep(0.10,0.87,uv.x);
+          float density=(body*(0.24+cloud*0.20)+edge*0.17)*exposure+side*0.14;
+          density*=0.66+fold*0.55;
+          density*=1.0-smoothstep(0.72,1.02,uv.y);
+          vec3 violet=mix(vec3(0.24,0.13,0.42),vec3(0.58,0.43,0.78),clamp(fold*1.1,0.0,1.0));
+          float grain=(hash(floor(gl_FragCoord.xy))-0.5)*0.022;
+          violet+=grain;
+          gl_FragColor=vec4(violet,clamp(density,0.0,0.56));
+        }`;
+      let gl=null,renderer=null,lost=false,raf=0,scrollRaf=0,lastFrame=0,elapsed=0,inHero=true;
+      function createRenderer(){
+        try{
+          gl=surface.getContext('webgl',{alpha:true,antialias:false,depth:false,stencil:false,premultipliedAlpha:false,powerPreference:'low-power'});
+          if(!gl)return null;
+          const shaders=[];
+          function compile(type,source){
+            const shader=gl.createShader(type);if(!shader)throw new Error('No shader');
+            gl.shaderSource(shader,source);gl.compileShader(shader);
+            if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS)){gl.deleteShader(shader);throw new Error('Shader unavailable');}
+            shaders.push(shader);return shader;
+          }
+          const program=gl.createProgram();if(!program)return null;
+          gl.attachShader(program,compile(gl.VERTEX_SHADER,vertex));gl.attachShader(program,compile(gl.FRAGMENT_SHADER,fragment));gl.linkProgram(program);
+          shaders.forEach(shader=>gl.deleteShader(shader));
+          if(!gl.getProgramParameter(program,gl.LINK_STATUS)){gl.deleteProgram(program);return null;}
+          const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);
+          gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+          gl.useProgram(program);
+          const position=gl.getAttribLocation(program,'a_position');
+          gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);
+          const resolution=gl.getUniformLocation(program,'u_resolution'),time=gl.getUniformLocation(program,'u_time');
+          return{
+            resize(){
+              const scale=Math.min(0.6,960/Math.max(innerWidth,1),560/Math.max(innerHeight,1));
+              surface.width=Math.max(1,Math.round(innerWidth*scale));surface.height=Math.max(1,Math.round(innerHeight*scale));
+              gl.viewport(0,0,surface.width,surface.height);
+            },
+            draw(seconds){
+              gl.useProgram(program);gl.uniform2f(resolution,surface.width,surface.height);gl.uniform1f(time,seconds);gl.drawArrays(gl.TRIANGLES,0,6);
+            }
+          };
+        }catch(_){return null;}
+      }
+      function setRenderer(){
+        renderer=createRenderer();layer.dataset.renderer=renderer?'webgl':'css';
+        if(renderer){renderer.resize();renderer.draw(elapsed);}
+      }
+      function running(){return backgroundEnabled&&!reduced.matches&&!document.hidden&&inHero&&!lost;}
+      function frame(now){
+        raf=0;if(!running()||!renderer)return;
+        if(!lastFrame||now-lastFrame>=40){
+          elapsed+=lastFrame?Math.min((now-lastFrame)/1000,0.1):0;lastFrame=now;renderer.draw(elapsed);
+        }
+        raf=requestAnimationFrame(frame);
+      }
+      function sync(){
+        cancelAnimationFrame(raf);raf=0;lastFrame=0;
+        const play=running();layer.dataset.running=String(play);
+        if(renderer&&!lost){renderer.draw(elapsed);if(play)raf=requestAnimationFrame(frame);}
+      }
+      function position(){
+        scrollRaf=0;const rect=hero.getBoundingClientRect();
+        const visible=rect.bottom>0&&rect.top<innerHeight;
+        const opacity=clamp((rect.bottom-innerHeight*0.08)/Math.max(innerHeight*0.7,1));
+        layer.style.setProperty('--flow-visibility',String(opacity));
+        if(visible!==inHero){inHero=visible;sync();}
+      }
+      setRenderer();position();sync();
+      addEventListener('scroll',()=>{if(!scrollRaf)scrollRaf=requestAnimationFrame(position);},{passive:true});
+      addEventListener('resize',()=>{if(renderer&&!lost){renderer.resize();renderer.draw(elapsed);}position();},{passive:true});
+      motionControl.addEventListener('click',sync);
+      reduced.addEventListener?.('change',sync);
+      document.addEventListener('visibilitychange',sync);
+      surface.addEventListener('webglcontextlost',event=>{event.preventDefault();lost=true;layer.dataset.renderer='css';sync();});
+      surface.addEventListener('webglcontextrestored',()=>{lost=false;setRenderer();sync();});
+    })();
+
+    const dialog=document.getElementById('image-dialog'),dialogClose=document.getElementById('dialog-close'),profileButton=document.getElementById('profile-zoom');let dialogPrevious=null,dialogRaf=0;
+    function openDialog(){dialogPrevious=profileButton;dialog.hidden=false;body.style.overflow='hidden';dialogRaf=requestAnimationFrame(()=>dialog.classList.add('open'));dialogClose.focus({preventScroll:true});}
+    function closeDialog(){cancelAnimationFrame(dialogRaf);dialog.classList.remove('open');dialog.hidden=true;body.style.overflow='';dialogPrevious?.focus({preventScroll:true});}
+    profileButton.addEventListener('click',openDialog);dialogClose.addEventListener('click',closeDialog);dialog.addEventListener('click',e=>{if(e.target===dialog)closeDialog();});document.addEventListener('keydown',e=>{if(dialog.hidden)return;if(e.key==='Escape')closeDialog();if(e.key==='Tab'){e.preventDefault();dialogClose.focus();}});
+
+  })();
+  </script>
+  <script src="./assets/mini-program-miaodaiban/case.js" defer></script>
+
+
+  <aside class="aqua-spirit" id="aqua-spirit" data-visible="true" aria-label="水灵精灵挂件">
+    <canvas class="spirit-live-canvas" width="360" height="486" aria-hidden="true"></canvas>
+    <button class="spirit-close" type="button" data-cursor="pointer" aria-label="隐藏精灵，刷新页面可恢复" title="隐藏精灵">×</button>
+  </aside>
+  <script src="./assets/aqua-spirit/spirit-soft-v20.js" defer></script>
+  <script src="./assets/work-marquee/work-marquee.js" defer></script>
+  <script src="./assets/contact-copy/contact-copy.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+.contact-row .copy-status {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 78px;
+  min-height: 32px;
+  padding: 5px 10px;
+  border: 1px solid #b3a5d54d;
+  border-radius: 6px;
+  background: #b3a5d510;
+  color: #c7b9f0;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: background-color 180ms ease-out, color 180ms ease-out;
+}
+
+.contact-row[data-copy-state="success"] .copy-status {
+  border-color: #88d2b77a;
+  background: #388b6b40;
+  color: #baf3d9;
+}
+
+.contact-row[data-copy-state="error"] .copy-status {
+  border-color: #deab8270;
+  background: #9b65402b;
+  color: #f1c29d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-row .copy-status { transition: none; }
+}
