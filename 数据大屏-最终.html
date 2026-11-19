@@ -153,10 +153,9 @@
         }
 
         /* 确保卡片内容层叠于 ::before 之上 */
-        .glass-panel > * {
-            position: relative;
-            z-index: 1;
-        }
+        .glass-panel > * { z-index: 1; }
+        /* Keep decorative layers out of the flex layout. */
+        .glass-panel > :not(.absolute) { position: relative; }
 
         .font-data {
             font-family: 'JetBrains Mono', monospace;
